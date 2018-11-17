@@ -1,2 +1,3 @@
 ====== Wiki ======
 
+The main purpose of this wiki is to enable comfortable editing of the skill definitions.
