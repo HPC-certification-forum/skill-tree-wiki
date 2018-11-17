@@ -1,2 +1,0 @@
-# SE6
-# Name: Software Design and Software Architecture

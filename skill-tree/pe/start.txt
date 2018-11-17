@@ -1,2 +1,0 @@
-# PE
-# Name: Performance Engineering

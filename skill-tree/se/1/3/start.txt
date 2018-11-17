@@ -1,2 +1,0 @@
-# SE1-3
-# Name: Efficient Algorithms and Data Structures

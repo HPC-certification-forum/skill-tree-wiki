@@ -1,2 +1,0 @@
-# SE1-2
-# Name: Parallel Programming

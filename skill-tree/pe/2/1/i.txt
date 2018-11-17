@@ -1,6 +1,0 @@
-# PE2.1-I
-# Name: Using Standard Tools to Measure System Performance
-# Background
-  *  Tools used in Linux-based environemnts like htop, iostat, and perf are sketched. 
-# Learning objectives
-# Outcomes

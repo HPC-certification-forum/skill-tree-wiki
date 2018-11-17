@@ -1,6 +1,0 @@
-# K1.1-E
-# Name: System Architectures
-# Background
-# Learning objectives
-# Outcomes
-  *  storage and compute deployments for cluster systems 

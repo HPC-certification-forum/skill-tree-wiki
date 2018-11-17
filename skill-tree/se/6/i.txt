@@ -1,5 +1,0 @@
-# SE6-I
-# Name: Software Design and Software Architecture
-# Background
-# Learning objectives
-# Outcomes

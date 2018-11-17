@@ -1,2 +1,0 @@
-# PE2-1
-# Name: Using Standard Tools to Measure System Performance

@@ -1,6 +1,0 @@
-# USE1.2-E
-# Name: Using Shell Scripts
-# Background
-# Learning objectives
-# Outcomes
-  *  read keyboard input to add interactivity to scripts 

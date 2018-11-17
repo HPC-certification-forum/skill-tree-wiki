@@ -1,2 +1,0 @@
-# K1-4
-# Name: Operation of an HPC System

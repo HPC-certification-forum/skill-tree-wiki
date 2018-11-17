@@ -1,2 +1,0 @@
-# SE
-# Name: Software Engineering for HPC

@@ -1,2 +1,0 @@
-# SE1-2-3
-# Name: Programming Message Passing Systems

@@ -1,5 +1,0 @@
-# USE1-E
-# Name: Use of the Cluster Operating System
-# Background
-# Learning objectives
-# Outcomes

@@ -1,2 +1,0 @@
-# USE3
-# Name: Building of Parallel Programs

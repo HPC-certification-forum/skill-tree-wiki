@@ -1,2 +1,0 @@
-# USE2
-# Name: Running of Parallel Programs

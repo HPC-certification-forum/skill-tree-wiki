@@ -1,6 +1,0 @@
-# SE1.2.4-E
-# Name: Load Balancing
-# Background
-# Learning objectives
-# Outcomes
-  *  apply domain decomposition strategies 
