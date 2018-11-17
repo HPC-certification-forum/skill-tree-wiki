@@ -1,0 +1,1 @@
+{{indexmenu>#1|#bj-tango.png navbar msort tsort nsort noscroll notoc}}

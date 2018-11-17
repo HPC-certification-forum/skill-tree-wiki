@@ -1,0 +1,7 @@
+*.repo
+wiki/data/index
+wiki/data/locks
+wiki/data/tmp
+wiki/data/cache
+wiki/data/meta
+wiki/data/attic
