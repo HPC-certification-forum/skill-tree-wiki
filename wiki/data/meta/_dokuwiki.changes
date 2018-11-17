@@ -5,3 +5,12 @@
 1542485025	172.17.0.1	E	wiki:welcome	admin			23
 1542487006	172.17.0.1	C	start	admin	created		44
 1542487165	172.17.0.1	C	sidebar	admin	created		70
+1542487743	172.17.0.1	C	use_1_i	admin	created		19
+1542487752	172.17.0.1	D	use_1_i	admin	removed		-19
+1542487876	172.17.0.1	C	skills:use:b	admin	created		4
+1542487971	127.0.0.1	E	skills:use:4:i		external edit		158
+1542488010	172.17.0.1	E	skills:use:4:i	admin			7
+1542488027	172.17.0.1	E	skills:use:4:i	admin			15
+1542488097	127.0.0.1	E	skills:use:4:start		external edit		0
+1542488302	172.17.0.1	E	skills:use:4:start	admin			19
+1542488662	172.17.0.1	E	start	admin			-24
