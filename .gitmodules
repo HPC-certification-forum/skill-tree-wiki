@@ -1,0 +1,3 @@
+[submodule "skill-tree"]
+	path = skill-tree
+	url = git@github.com:HPC-certification-forum/skill-tree.git
