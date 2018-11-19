@@ -1,0 +1,100 @@
+====== Wiki ======
+
+The main purpose of this wiki is to enable comfortable editing of the skill definitions from the [[https://github.com/HPC-certification-forum/skill-tree|git repository]].
+One skill is exactly one page.
+
+To navigate the skills effectively, use the [[https://www.hpc-certification.org/skills/map/|JavaScript Map]]
+
+===== Skill definition =====
+
+A skill is located in a unique place in the skill tree, which is the URI.
+There may be multiple references to a skill in the tree (which is then like a graph).
+
+A skill is defined by the following fields:
+  * **ID** \\ This is a unique identifier from the root of the tree to the skill. \\ The last character of the skill encodes the skill level (**B**)asic, (**I**)ntermediate, (**E**)xpert. Skills with a higher level expand upon the competences from a lower level, therefore, an expert skill includes the qualification of intermediate and basic.
+  * **Name** \\ A speaking name for a skill.
+  * **Background** \\ Provides brief information motivating the need for the skill and how this skill fits into the skill map; what is the bigger picture.
+  * **Learning objectives** \\ Defines briefly **what** the skill covers (what practitioners know / will learn) and **why** they should be learning it. The objected are statements what prospect learners will do, they should
+    * describe or define an action
+    * be clearly stated
+    * be measurable/quantifiable to some extent, for example, by using the action words (from below)
+  * **Outcomes** \\ Defines what the practitioner knows with the skill and is able to do. 
+
+Good literature describing the objectives is found [[http://batchwood.herts.sch.uk/files/Learning-Objectives.pdf|here]].
+
+==== Action words ====
+
+See [[http://batchwood.herts.sch.uk/files/Learning-Objectives.pdf|batchwood]].
+
+
+## Example skill
+
+This skill is made up for demonstration purposes. 
+Firstly, we have a high-level skill.
+
+
+### High-level skill
+
+  * **ID**: USE4.2-B
+  * **Name**: Executing parallel applications
+  * **Background** \\
+    Parallel computers are operated differently than a normal PC, all users must share the system. Therefore, various operative procedures are in place. Users must understand these concepts and procedures to be able to use the available resources of a system to run a parallel application. Moreover, individual solutions can often be found in a specific system.
+  * **Objectives**; the practitioner is able to:
+    * comprehend the concepts and procedures for running parallel applications in HPC environments
+    * use the system to run and monitor the execution of parallel applications on the HPC system
+  * **Outcomes**; the practitioner is able to:
+    * explain the concepts and procedures for resource allocation and job execution in an HPC environment    
+    * run an interactive job and a batch job
+    * comprehend and describe the expected behavior of job scripts
+    * change provided job scripts and embed them into shell scripts to run a variety of parallel applications
+    * analyze the output generated from a job scheduler and typically generated errors
+
+
+### Generic Sub-skill 
+
+Now, let's see a generic sub-skill, this extends the previous definition being a sub-skill. Hence, it is intended that the objectives and outcomes from the parent skill above are covered and refined into specifics.
+
+  * **ID**: USE4.2.1-B
+  * **Name**: Workload manager introduction
+  * **Background** \\ There is a wide range of different workload managers in use. This skill covers generic and widely used concepts.
+  * **Objectives** 
+    * comprehend and describe the basic architecture and concepts of resource allocation for an HPC system
+
+  * **Outcomes**
+    * comprehend the exclusive and shared usage model in HPC
+    * differentiate batch and interactive job submission
+    * comprehend the generic concepts and architecture of resource manager, scheduler, job and job script
+    * explain environment variables as a means to communicate
+    * comprehend accounting principles
+    * explain the generic steps to run and monitor a single job
+
+### Sub-Skill for a specific software solutions
+
+Now, let's see a specific sub-skill for a specific software, this also extends the previous definition being a sub-skill but is on the same level as the basic skill above. Hence, multiple similar software solutions can build on the knowledge disseminated in USE4.2.1-B.
+
+
+  * **ID**: USE4.2.2-B
+  * **Name**: SLURM Workload manager
+  * **Background** \\ SLURM is a widely used open-source workload manager providing various advanced features.
+  * **Objectives** 
+    * comprehend and describe the basic architecture of SLURM and the suite of tools
+    * use relevant tools to run and monitor (parallel) applications
+
+  * **Outcomes**
+    * run interactive jobs with //salloc//, a batch job with //sbatch//
+    * explain the architecture of SLURM, i.e., the role of slurmd, srun and the injection of environment variables
+    * explain the function of the tools: sacct, sbatch, salloc, srun, scancel, squeue, sinfo
+    * explain time limits and the benefit of a backfill scheduler
+    * comprehend that environment variables are set when running a job
+    * comprehend and describe the expected behavior of a simple job scripts
+    * comprehend how variables are prioritized when using command line and a script
+    * change a provided job template and embed them into shell scripts to run a variety of parallel applications
+    * analyze the output generated from submitting to the job scheduler and typically generated errors
+
+FIXME:
+  * Intermediate
+    * reservations
+    * array jobs
+
+
+

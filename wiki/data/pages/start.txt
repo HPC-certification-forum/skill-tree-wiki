@@ -1,5 +1,0 @@
-====== Wiki ======
-
-The main purpose of this wiki is to enable comfortable editing of the skill definitions.
-
-To navigate the skills effectively, use the [[https://www.hpc-certification.org/skills/map/|JavaScript Map]]
