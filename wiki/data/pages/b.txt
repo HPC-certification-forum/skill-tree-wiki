@@ -5,6 +5,17 @@ One skill is exactly one page.
 
 To navigate the skills effectively, use the [[https://www.hpc-certification.org/skills/map/|JavaScript Map]]
 
+===== Editing the skill tree  =====
+
+We welcome improvements to the skill definitions (we lack at the moment some description below) and suggestions for skill tree changes.
+The skill tree has several representations, an XML representation and a Markdown converted version form the foundation; then we have a JavaScript representation for better navigationability.
+The markdown version is available in this [[https://www.hpc-certification.org/wiki/|wiki]].
+You may use it to make minor modifications to the descriptions (just register).
+More complex changes and modifications of the tree itself should be done by creating a GitHub pull request to either [[https://github.com/HPC-certification-forum/skill-tree|Markdown]] or [[https://github.com/HPC-certification-forum/curriculum|XML]] representation.
+
+Note that the chairs for the subtree may comment or discuss the proposal.
+
+
 ===== Skill definition =====
 
 A skill is located in a unique place in the skill tree, which is the URI.
