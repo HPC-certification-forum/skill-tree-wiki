@@ -9,4 +9,6 @@
 # login:passwordhash:Real Name:email:groups,comma,separated
 
 
-admin:$1$iMDbjTXR$rNYOAXLfp1h32n.rQC4Hh/:admin:admin@admin.ad:admin,user
+
+kunkel:$1$8T2W6ddx$zvGGLPhrphRfS5p86/tCv.:Julian Kunkel:juliankunkel@googlemail.com:admin,user
+gerbes:$1$XBjSU6rj$CYQNlHSc1unhE8VRrjgU70:Anja Gerbes:anja.gerbes@googlemail.com:user
