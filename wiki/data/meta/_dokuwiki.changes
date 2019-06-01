@@ -18,3 +18,26 @@
 1555090334	134.225.207.200	E	b	kunkel	[High-level skill] 		-2
 1555090436	134.225.207.200	E	b	kunkel	[High-level skill] 		-11
 1555090506	134.225.207.200	E	b	kunkel	[High-level skill] 		-3
+1559397496	127.0.0.1	E	skill-tree:use:2:b		external edit		1251
+1559397610	172.17.0.1	E	skill-tree:use:2:b		[Outcomes] 		12
+1559398199	172.17.0.1	E	skill-tree:use:2:b	kunkel	[Subskills] 		46
+1559397496	127.0.0.1	E	skill-tree:use:b		external edit		1185
+1559398635	172.17.0.1	E	skill-tree:use:b	kunkel	[Outcomes] 		14
+1559398640	172.17.0.1	E	skill-tree:use:b	kunkel	[Subskills] 		-12
+1559398651	172.17.0.1	E	skill-tree:use:2:b	kunkel	[Subskills] 		-56
+1559381867	127.0.0.1	E	b		external edit		6949
+1559399135	172.17.0.1	E	b	kunkel	[Skill definition] 		184
+1559400418	172.17.0.1	R	skill-tree:use:2:b	kunkel	old revision restored (2019/06/01 14:09)	1559398199	56
+1559400424	172.17.0.1	E	skill-tree:use:2:b	kunkel	[Subskills] 		-20
+1559397496	127.0.0.1	E	skill-tree:k:b		external edit		760
+1559400466	172.17.0.1	E	skill-tree:k:b	kunkel			12
+1559400902	127.0.0.1	E	skill-tree:k:b		external edit		-12
+1559400994	172.17.0.1	E	skill-tree:k:b	kunkel			12
+1559400998	172.17.0.1	E	skill-tree:k:b	kunkel			1
+1559400902	127.0.0.1	E	skill-tree:k:4:2:b		external edit		1106
+1559401388	172.17.0.1	E	skill-tree:k:4:2:b	kunkel			-4
+1559401411	172.17.0.1	E	skill-tree:k:4:2:b	kunkel			-4
+1559401362	127.0.0.1	E	skill-tree:b		external edit		167
+1559401433	172.17.0.1	E	skill-tree:b	kunkel			3
+1559400902	127.0.0.1	E	skill-tree:use:2:b		external edit		-38
+1559401494	172.17.0.1	E	skill-tree:use:2:b	kunkel			37
