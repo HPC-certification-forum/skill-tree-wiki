@@ -32,12 +32,11 @@ A skill is defined by the following fields:
     will learn or do, but rather over-arching intentions of the
     course. At a basic level, aims are trying to answer two
     questions: What is the purpose of this programme or module? What is the programme or module trying to achieve?* [[https://academicdevelopment.qmul.ac.uk//wp-content/uploads/2014/05/Aims-and-Outcomes-Guide.pdf|reference]]
-  * **Learning outcomes** \\ Defines briefly **what** what practitioners know / will learn. The objected are statements what prospect learners are able to do, they should
+  * **Learning outcomes** \\ Defines briefly **what** what practitioners know / will learn. Good literature describing the objectives is   [[https://academicdevelopment.qmul.ac.uk//wp-content/uploads/2014/05/Aims-and-Outcomes-Guide.pdf|here]]. The objected are statements what prospect learners are able to do, they should
     * describe or define an action
     * be clearly stated
     * be measurable/quantifiable to some extent, for example, by using the action words 
-
-Good literature describing the objectives is   [[https://academicdevelopment.qmul.ac.uk//wp-content/uploads/2014/05/Aims-and-Outcomes-Guide.pdf|here]].
+  * **Subskills** \\ skills in the tree that refine the generic aims and learning outcomes. Note that for the ease of navigation ability, they may stem from another (top-level) branch.
 
 ==== Action words ====
 
