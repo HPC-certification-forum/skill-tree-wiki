@@ -15,7 +15,7 @@ cd skill-tree
 git add -A *
 git commit -m "autocommit from the webpage"
 git pull -q
-#git push -q
+git push -q
 
 
 ) > /dev/null
