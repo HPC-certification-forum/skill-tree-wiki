@@ -1,7 +1,7 @@
 ====== Wiki ======
 
-The main purpose of this wiki is to enable comfortable editing of the skill definitions from the [[https://github.com/HPC-certification-forum/skill-tree|git repository]].
-One skill is exactly one page.
+The main purpose of this wiki is to enable comfortable editing of the skill definitions from the [[https://github.com/HPC-certification-forum/skill-tree|git repository]] and for the available certificates.
+One skill or certificate is exactly one page.
 
 To navigate the skills effectively, use the [[https://www.hpc-certification.org/skills/map/|JavaScript Map]]
 
