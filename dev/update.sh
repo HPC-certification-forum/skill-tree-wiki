@@ -17,6 +17,5 @@ git commit -m "autocommit from the webpage"
 git pull -q
 git push -q
 
-
 ) > /dev/null
 
