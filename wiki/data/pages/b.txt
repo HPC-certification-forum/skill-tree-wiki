@@ -38,7 +38,6 @@ A skill is defined by the following fields:
     * be measurable/quantifiable to some extent, for example, by using the action words 
   * **Subskills** \\ skills in the tree that refine the generic aims and learning outcomes. Note that for the ease of navigation ability, they may stem from another (top-level) branch.
 
-
 ==== Action words ====
 
 ## Example skill
