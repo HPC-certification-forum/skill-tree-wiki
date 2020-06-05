@@ -7,15 +7,19 @@ function hpccf_mod_links(links){
   if(! div){
     return ;
   }
-  div.append('<h1 class="sectionedit10" id="Links">Links</h1>');
   var path = window.location.pathname;
   path = path.split("/");
   path.shift();
-  path.shift();
+  if(path.shift() != "skill-tree"){
+    path.shift();
+    path.shift();
+  }
   path = path.join("/");
-
+  if(path == ""){
+    return;
+  }
+  div.append('<h1 class="sectionedit10" id="Links">Links</h1>');
   links = hpccf_create_link("/contribute-question/" + path, "Submit a proposal for an examination question");
-
   div.append('<div class="level1"><ul>' + links + "</ul></div>");
 }
 
