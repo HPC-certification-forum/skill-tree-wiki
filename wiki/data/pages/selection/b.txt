@@ -1,0 +1,7 @@
+====== Selection ======
+
+You can mark specific skills by clicking on the star and view it in this page and perform operations with it. 
+
+
+===== Selected Skills =====
+

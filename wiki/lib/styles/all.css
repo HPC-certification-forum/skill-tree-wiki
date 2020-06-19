@@ -3,6 +3,19 @@
  * regardless of the used template. Templates can override them of course
  */
 
+span#marked{
+  display: block;
+  float: left;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: large;
+}
+
+span#marked.star{
+  color: orange;
+}
+
+/*span.star::before{ */
+
 div.clearer {
     clear: both;
     font-size: 0;
