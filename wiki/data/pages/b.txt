@@ -105,10 +105,5 @@ Now, let's see a specific sub-skill for a specific software, this also extends t
     * change a provided job template and embed them into shell scripts to run a variety of parallel applications
     * analyze the output generated from submitting to the job scheduler and typically generated errors
 
-FIXME:
-  * Intermediate
-    * reservations
-    * array jobs
-
 
 
