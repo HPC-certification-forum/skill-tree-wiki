@@ -1,11 +1,24 @@
+function getCookie(name) {
+    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : "";
+}
+
+function setCookie(name, value, days) {
+    var d = new Date;
+    d.setTime(d.getTime() + 24*60*60*1000*days);
+    document.cookie = name + "=" + value + ";path=/;SameSite=Strict;expires=" + d.toGMTString();
+}
+
+function deleteCookie(name) { setCookie(name, '', -1); }
+
 function hpccf_create_link(link, text){
   return '<li class="level1"><div class="li"> <a href="' + link + '" class="wikilink1">' + text + '</a></div></li>'
 }
 
 function hpccf_is_star(path){
-  var c = jQuery.cookie("likeSkill");
+  var c = getCookie("likeSkill");
   if(! c) return false;
-  return c.search(path + ";") > -1;
+  return c.search(path + "_") > -1;
 }
 
 function hpccf_add_star_option(path){
@@ -15,21 +28,22 @@ function hpccf_add_star_option(path){
 function hpccf_star(path){
   var o = jQuery("span#marked");
   o.toggleClass("star");
-  var c = jQuery.cookie("likeSkill");
+  var c = getCookie("likeSkill");
   if(! c) c = "";
   if(o.hasClass("star")){
-    c = path + ";" + c;
+    c = path + "_" + c;
   }else{
-    var p = c.search(path + ";");
+    var p = c.search(path + "_");
     if(p > -1){
       c = c.substr(0, p) + c.substr(p + path.length + 1)
     }
   }
-  jQuery.cookie("likeSkill", c, { path: '/' });
+  setCookie("likeSkill", c);
 }
 
 hpccf_skill = [];
 hpccf_skill_title = {};
+hpccf_version = "1.0";
 
 function hpccf_remove_skill(id){
   var pos = hpccf_skill.indexOf(id);
@@ -80,11 +94,15 @@ function hpccf_create_endorsment(){
   for(var i in hpccf_skill){
     var skill = hpccf_skill[i];
     if(! skill in hpccf_skill_title) continue;
-    if(! first) str += ",<br>";
+    if(! first) str += ",<br/>";
     str += skill + " (" + hpccf_skill_title[skill] + ")";
     first = false;
   }
-  out.append("<p>This training covers (partially)<br>" + str + " <div>https://hpc-certification.org/wiki/skill-tree/</div></p>");
+  var img = 'https://raw.githubusercontent.com/HPC-certification-forum/tools/master/branding/released/endorsement-' + hpccf_version;
+  var url = "https://hpc-certification.org/wiki/skill-tree/" + hpccf_version;
+
+  out.append('<p>Please use one of these images: <a href="' + img + '.png">PNG</a> <a href="' + img + '.pdf">PDF</a></p><h4>Customize the text in the expected look:</h4><p><img style="width:40%;" src="' + img + '.png"></p>');
+  out.append("<p>This training <span class='hint' title='Choose if this is material or an event'>material/event</span> covers <span class='hint' title='If you train all learning objectives, you may remove partially.'>(partially)</span><br/>" + str + "<br/><a href='" + url + "'>" + url + "</a></p>");
 }
 
 function hpccf_load_skill_list(){
@@ -103,7 +121,7 @@ function hpccf_load_skill_list(){
 }
 
 function hpccf_load_skills_cookie(){
-  var arr = jQuery.cookie("likeSkill").split(";");
+  var arr = getCookie("likeSkill").split("_");
   arr.pop();
   hpccf_skill = arr.sort();
 }
@@ -140,7 +158,7 @@ function hpccf_show_selection(){
     }
     str3 + = '<div><span class="star" onclick="hpccf_remove_skill(\'' + skill + '\'); hpccf_show_selection();">&#x2605;</span></div>';
   }
-  div.append("<div class='skilllist'>" + str + "</div><div class='skilllist'>" + str2 + "</div><div>" + str3 + '</div><div><a href="#" onclick=\'jQuery.cookie("likeSkill", "", { path: "/" });location.reload();\'>Clear selection</a></div><p></p>' + input);
+  div.append("<div class='skilllist'>" + str + "</div><div class='skilllist'>" + str2 + "</div><div>" + str3 + '</div><div><a href="#" onclick=\'deleteCookie("likeSkill");location.reload();\'>Clear selection</a></div><p></p>' + input);
   div.append('<h2>Operations</h2>');
   div.append('<p><div><a href="#" onclick=\'hpccf_create_endorsment()\'>Create training endorsment string</a></div> </p>');
   div.append('<div id="output" style="display:none"></div>');
