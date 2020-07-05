@@ -131,7 +131,7 @@ function hpccf_add_link(id){
   return "<a href='"+ path + id + "'>" + id + "</a>";
 }
 
-function hccf_validate_skill(id, skill){ /* return error */
+function hccf_validate_skill(id, data, skill){ /* return error */
   // check basic consistency
   if (! ("title" in skill)){
     return ["Unparsable skill"];
@@ -156,7 +156,7 @@ function hccf_validate_skill(id, skill){ /* return error */
     status.push("Aim section missing");
   }else{
     var check = skill["aim"];
-    if(check.length < 2){
+    if(check.length < 1){
       status.push("Aim section must have at least one aim as bullet list");
     }
   }
@@ -167,6 +167,17 @@ function hccf_validate_skill(id, skill){ /* return error */
     var check = skill["outcomes"];
     if(check.length < 3){
       status.push("Outcomes section must have at least two outcomes");
+    }
+  }
+
+  if( "subskills" in skill ){
+    // check that they are sound
+    var check = skill["subskills"];
+    for( var i in check ){
+      var subskill = check[i];
+      if (! (subskill in data)){
+        status.push("Subskill not existing: " + subskill);
+      }
     }
   }
 
@@ -194,37 +205,39 @@ function hccf_validate_skill(id, skill){ /* return error */
     }
   }
 
+  // check titles across subversions of the skill
+  var type = id.slice(-1);
+  if (type != "b"){
+    // compare with basic title
+    var basic_skill = id.substring(0, id.length - 2);
+    var basic = data[basic_skill + "/b"];
+    if("title" in basic){
+      var expected_title = basic["title"].replace("-B ", "-" + type.toUpperCase() + " ");
+      if(expected_title != skill["title"]){
+        status.push("Title doesn't match title infered from basic skill: " + expected_title);
+      }
+    }else{
+      status.push("Basic skill missing or unparsable");
+    }
+  }
+
   return status;
 }
 
 function hccf_add_status(id, data, skill){
   var str = "";
-  var msg = hccf_validate_skill(id, skill);
+  var msg = hccf_validate_skill(id, data, skill);
   var status = "ok";
-
   if ("title" in skill){
     str += "<div>" + skill["title"] + "</div>";
-
-    // check titles across subversions of the skill
-    var type = id.slice(-1);
-    if (type != "b"){
-      // compare with basic title
-      var basic_skill = id.substring(0, id.length - 2);
-      var basic = data[basic_skill + "/b"];
-      if("title" in basic){
-        var expected_title = basic["title"].replace("-B ", "-" + type.toUpperCase() + " ");
-        if(expected_title != skill["title"]){
-          msg.push("Title doesn't match title infered from basic skill: " + expected_title);
-        }
-      }
-    }
   }
 
   if(msg.length != 0) {
     status = "err";
     var tmp = msg;
+    msg = "";
     for (err in tmp){
-      msg = "<div>" + tmp[err] + "</div>";
+      msg += "<div>" + tmp[err] + "</div>";
     }
   }
 
