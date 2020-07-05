@@ -1,8 +1,0 @@
-====== Certificates ======
-
-A certificate shall serve as a confirmation that a user obtained the
-expertise in the relevant skills. 
-The subpages show the available and examinable skills.
-
-We have a prototype in place but are working to make certificates publicly available.
-Special considerations need to be given to the certification integrity.

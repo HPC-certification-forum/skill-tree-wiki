@@ -1,0 +1,7 @@
+====== Status ======
+
+This page shows the status of the current development version of the certification standard.
+
+===== Status of the Competence Specification =====
+
+

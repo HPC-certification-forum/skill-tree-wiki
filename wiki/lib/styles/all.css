@@ -3,6 +3,25 @@
  * regardless of the used template. Templates can override them of course
  */
 
+div.skill-list div{
+  margin-left: 2em;
+}
+
+div.skill-ok a:link{
+  color: green;
+}
+
+div.skill-ok a:visited{
+  color: green;
+}
+
+div.skill-err a:link{
+  color: red;
+}
+
+div.skill-err a:visited{
+  color: red;
+}
 
 .hint{
   text-decoration: underline;

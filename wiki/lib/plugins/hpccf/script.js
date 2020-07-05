@@ -126,6 +126,149 @@ function hpccf_load_skills_cookie(){
   hpccf_skill = arr.sort();
 }
 
+function hpccf_add_link(id){
+  var path = "https://www.hpc-certification.org/wiki/skill-tree/";
+  return "<a href='"+ path + id + "'>" + id + "</a>";
+}
+
+function hccf_validate_skill(id, skill){ /* return error */
+  // check basic consistency
+  if (! ("title" in skill)){
+    return ["Unparsable skill"];
+  }
+  var status = [];
+
+  if(! ("background" in skill)){
+    status.push("Background section missing");
+  }else{
+    var check = skill["background"];
+
+    if(check.length < 1){
+      status.push("Background section is empty");
+    }else{
+      if(check[0].length < 20){
+        status.push("Background section must be at least 20 characters");
+      }
+    }
+  }
+
+  if(! ("aim" in skill)){
+    status.push("Aim section missing");
+  }else{
+    var check = skill["aim"];
+    if(check.length < 2){
+      status.push("Aim section must have at least one aim as bullet list");
+    }
+  }
+
+  if(! ("outcomes" in skill)){
+    status.push("Outcomes section missing");
+  }else{
+    var check = skill["outcomes"];
+    if(check.length < 3){
+      status.push("Outcomes section must have at least two outcomes");
+    }
+  }
+
+  // check title
+  var res = skill["title"].split(" ");
+  if(skill["id"] != id){
+    status.push("ID is inconsistent, how can that happen?");
+  }
+  if(res.length < 2){
+    status.push("Title must contain the ID");
+  }else{
+    var re = /([A-Z]*)([1-9.]+)?-([BIE])/;
+    var match = res[0].match(re);
+    if(match){
+      var expected = match[1].toLowerCase() + "/";
+      if(match[2]){
+        expected += match[2].split(".").join("/") + "/";
+      }
+      expected += match[3].toLowerCase();
+      if( id != expected ){
+        status.push("Title ID doesn't match the expected ID");
+      }
+    }else{
+      status.push("Title doesn't match the regular expression");
+    }
+  }
+
+  return status;
+}
+
+function hccf_add_status(id, data, skill){
+  var str = "";
+  var msg = hccf_validate_skill(id, skill);
+  var status = "ok";
+
+  if ("title" in skill){
+    str += "<div>" + skill["title"] + "</div>";
+
+    // check titles across subversions of the skill
+    var type = id.slice(-1);
+    if (type != "b"){
+      // compare with basic title
+      var basic_skill = id.substring(0, id.length - 2);
+      var basic = data[basic_skill + "/b"];
+      if("title" in basic){
+        var expected_title = basic["title"].replace("-B ", "-" + type.toUpperCase() + " ");
+        if(expected_title != skill["title"]){
+          msg.push("Title doesn't match title infered from basic skill: " + expected_title);
+        }
+      }
+    }
+  }
+
+  if(msg.length != 0) {
+    status = "err";
+    var tmp = msg;
+    for (err in tmp){
+      msg = "<div>" + tmp[err] + "</div>";
+    }
+  }
+
+  return [status, "<div class='skill-list skill-" + status + "'>" + hpccf_add_link(e) + str + msg + "</div>"];
+}
+
+
+function hpccf_show_status_render(data){
+  var list = "";
+  var listerr = "";
+  var oks = 0;
+  var errs = 0;
+  for(e in data){
+    var ret = hccf_add_status(e, data, data[e]);
+    if(ret[0] == "ok"){
+      list += ret[1];
+      oks++;
+    }else{
+      listerr += ret[1];
+      errs++;
+    }
+  }
+  var div = jQuery("#status_of_the_competence_specification");
+  div.html('<h3 class="sectionedit3">Validation Error: ' + errs + ' skills</h3><p><div style="font-size:small">' + listerr + "</div></p>" + '<h3 class="sectionedit3">Validation OK: ' + oks + ' skills</h3><p><div style="font-size:small">' + list + "</div></p>");
+}
+
+
+function hpccf_show_status(){
+  var div = jQuery("#status_of_the_competence_specification");
+  if(div.length == 0) return;
+
+  jQuery.ajax({
+    url: "https://www.hpc-certification.org/api/",
+    dataType: "json",
+    mimeType: "application/json",
+    success: hpccf_show_status_render,
+    error: function(jqXHR, textStatus, error) {
+      console.log("jqXHR: '", jqXHR, "'");
+      console.log("textStatus: '", textStatus, "'");
+      console.log("error: '", error, "'");
+    }
+  });
+}
+
 function hpccf_show_selection(){
   var div = jQuery("#skill_selection");
   if(div.length == 0){
@@ -172,6 +315,7 @@ function hpccf_mod_links(links){
 
   hpccf_load_skills_cookie();
   hpccf_show_selection();
+  hpccf_show_status();
 
   var path = window.location.pathname;
   path = path.split("/");
