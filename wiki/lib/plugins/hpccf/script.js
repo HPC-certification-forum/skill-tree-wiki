@@ -229,7 +229,7 @@ function hccf_add_status(id, data, skill){
   var msg = hccf_validate_skill(id, data, skill);
   var status = "ok";
   if ("title" in skill){
-    str += "<div>" + skill["title"] + "</div>";
+    str += "<div>" + skill["title"] + " (exam questions:  " + skill["exams"]["questions"] + " <a href='https://www.hpc-certification.org/contribute-question/" + skill["id"] + "'>submit</a>) </div>";
   }
 
   if(msg.length != 0) {

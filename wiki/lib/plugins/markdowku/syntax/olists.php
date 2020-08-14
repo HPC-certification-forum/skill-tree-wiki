@@ -62,7 +62,7 @@ class syntax_plugin_markdowku_olists extends DokuWiki_Syntax_Plugin {
     }
 }
 
-class Doku_Handler_Markdown_Ordered_List extends Doku_Handler_List {
+class Doku_Handler_Markdown_Ordered_List extends \dokuwiki\Parsing\Handler\Lists {
     private $depth = array(0, 4);
 
     function interpretSyntax($match, &$type) {
@@ -70,7 +70,7 @@ class Doku_Handler_Markdown_Ordered_List extends Doku_Handler_List {
         $listlevel = 1;
         $real_position = 0;
         $logical_position = 0;
-        $text = preg_replace('/^\n*/', '', $match);
+        $text = preg_replace('/^\n*/', '\\', $match);
 
         while (TRUE) {
             if (preg_match('/^[ ]{'.$this->depth[$listlevel].'}/', substr($text, $real_position)) > 0) {

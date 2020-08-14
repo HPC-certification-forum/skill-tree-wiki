@@ -92,7 +92,7 @@ class syntax_plugin_markdowku_blockquotes extends DokuWiki_Syntax_Plugin {
     }
 }
 
-class Doku_Handler_Markdown_Quote extends Doku_Handler_Quote {
+class Doku_Handler_Markdown_Quote extends Doku_Handler {
     function getDepth($marker) {
         $quoteLength = 0;
         $position = 0;

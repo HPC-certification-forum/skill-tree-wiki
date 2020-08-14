@@ -50,7 +50,7 @@ class syntax_plugin_markdowku_ulists extends DokuWiki_Syntax_Plugin {
                 break;
             case DOKU_LEXER_EXIT:
                 $handler->_addCall('list_close', array(), $pos);
-                $handler->CallWriter->process();
+                //$handler->CallWriter->process();
                 $ReWriter = & $handler->CallWriter;
                 $handler->CallWriter = & $ReWriter->CallWriter;
                 break;
@@ -63,7 +63,7 @@ class syntax_plugin_markdowku_ulists extends DokuWiki_Syntax_Plugin {
     }
 }
 
-class Doku_Handler_Markdown_Unordered_List extends Doku_Handler_List {
+class Doku_Handler_Markdown_Unordered_List extends Doku_Handler {
     private $depth = array(0, 4);
 
     function interpretSyntax($match, &$type) {
