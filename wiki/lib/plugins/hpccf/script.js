@@ -85,6 +85,73 @@ function hpccf_renderSkill(url){
   });
 }
 
+function hpccf_print_address(e){
+  if(! ("location" in e)){
+    return "";
+  }
+  e = e["location"];
+  var str = " (";
+  if("PostalAddress" in e){
+    var t= e["PostalAddress"];
+    str += t["addressCountry"] + ", " + t["streetAddress"] + ", " + t["postalCode"] + " ";
+  }
+  if("url" in e){
+    str += "<a href='" + e["url"] +"'>location</a>";
+  }
+  if("VirtualLocation" in e){
+    var t= e["VirtualLocation"];
+    str += " <a href='" + t["url"] + "'>" + t["name"] + "</a>";
+  }
+  return str + ")";
+}
+
+function hpccf_render_events(div, events){
+  var str = "<ul>";
+  for (var i in events){
+    var e = events[i];
+    console.log(e);
+    str += "<li>" + e["startDate"] + " <a href='" + e["url"] + "'>" + e["name"] + "</a>" + hpccf_print_address(e) + "</li>";
+  }
+  div.append(str + "</ul>");
+}
+
+function hpccf_render_material(div, material){
+  var str = "<ul>";
+  for (var i in material){
+    var m = material[i];
+    console.log(m);
+    str += "<li>" + m["datePublished"] + " <a href='" + m["url"] + "'>" + m["name"] + "</a></li>";
+  }
+  div.append(str + "</ul>");
+}
+
+function hpccf_add_events(path){
+  jQuery.ajax({
+    url: "https://www.hpc-certification.org/api/" + path + "?fields=events,material",
+    dataType: "json",
+    mimeType: "application/json",
+    success: function(data){
+      var div = jQuery("#skill-extra");
+      if(! div){
+        return ;
+      }
+      if("events" in data){
+        div.append("<h1>Events</h1>");
+        hpccf_render_events(div, data["events"]);
+      }
+      if("material" in data){
+        div.append("<h1>Material</h1>");
+        hpccf_render_material(div, data["material"]);
+      }
+      },
+    error: function(jqXHR, textStatus, error) {
+      console.log("jqXHR: '", jqXHR, "'");
+      console.log("textStatus: '", textStatus, "'");
+      console.log("error: '", error, "'");
+    }
+  });
+}
+
 function hpccf_create_endorsment(){
   var out = jQuery("#output");
   out.show();
@@ -342,8 +409,11 @@ function hpccf_mod_links(links){
   if(path == ""){
     return;
   }
+
+  hpccf_add_events(path);
+
   // append contribution
-  div.append('<h1 class="sectionedit10" id="Links">Links</h1>');
+  div.append('<div id="skill-extra"></div><h1 class="sectionedit10" id="Links">Links</h1>');
   links = hpccf_create_link("/contribute-question/" + path, "Submit a proposal for an examination question");
   div.append('<div class="level1"><ul>' + links + "</ul></div>");
 
