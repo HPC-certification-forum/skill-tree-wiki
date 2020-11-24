@@ -47,14 +47,14 @@ Firstly, we have a high-level skill.
 
 ### High-level skill
 
-  * **ID**: USE4.2-B
-  * **Name**: Executing parallel applications
-  * **Background** \\
-    Parallel computers are operated differently than a normal PC, all users must share the system. Therefore, various operative procedures are in place. Users must understand these concepts and procedures to be able to use the available resources of a system to run a parallel application. Moreover, individual solutions can often be found in a specific system. 
-  * **Aim**: (To enable practitioners to) 
+  * **ID**: USE4.2-B \\
+  * **Name**: Executing parallel applications \\
+  * **Background**: Parallel computers are operated differently than a normal PC, all users must share the system. Therefore, various operative procedures are in place. Users must understand these concepts and procedures to be able to use the available resources of a system to run a parallel application. Moreover, individual solutions can often be found in a specific system. 
+
+**Aim**: (To enable practitioners to) 
   * To comprehend the concepts and procedures for running parallel applications in HPC environments
   * To use the system to run and monitor the execution of parallel applications on the HPC system
-  * **Outcomes**: (the practitioner is able to):
+**Outcomes**: (the practitioner is able to):
   * explain the concepts and procedures for resource allocation and job execution in an HPC environment
   * run interactive jobs and batch jobs
   * comprehend and describe the expected behavior of job scripts 
@@ -65,15 +65,16 @@ Firstly, we have a high-level skill.
 
 ### Generic Sub-skill 
 
-Now, let's see a generic sub-skill, this extends the previous definition being a sub-skill. Hence, it is intended that the objectives and outcomes from the parent skill above are covered and refined into specifics.
+Now, let's see a generic sub-skill, this extends the previous definition of being a sub-skill. Hence, it is intended that the objectives and outcomes from the parent skill above are covered and refined into specifics.
 
-  * **ID**: USE4.2.1-B
-  * **Name**: Workload manager introduction
+  * **ID**: USE4.2.1-B \\
+  * **Name**: Workload manager introduction \\
   * **Background** \\ There is a wide range of different workload managers in use. This skill covers generic and widely used concepts.
-  * **Aim** 
+
+**Aim** 
     * To enable practitioners to comprehend and describe the basic architecture and concepts of resource allocation for an HPC system
 
-  * **Outcomes**
+**Outcomes**
     * comprehend the exclusive and shared usage model in HPC
     * differentiate batch and interactive job submission
     * comprehend the generic concepts and architecture of resource manager, scheduler, job and job script
@@ -81,19 +82,20 @@ Now, let's see a generic sub-skill, this extends the previous definition being a
     * comprehend accounting principles
     * explain the generic steps to run and monitor a single job
 
-### Sub-Skill for a specific software solutions
+### Sub-Skill for specific software solutions
 
 Now, let's see a specific sub-skill for a specific software, this also extends the previous definition being a sub-skill but is on the same level as the basic skill above. Hence, multiple similar software solutions can build on the knowledge disseminated in USE4.2.1-B.
 
 
-  * **ID**: USE4.2.2-B
-  * **Name**: SLURM Workload manager
+  * **ID**: USE4.2.2-B \\
+  * **Name**: SLURM Workload manager\\
   * **Background** \\ SLURM is a widely used open-source workload manager providing various advanced features.
-  * **Aim** 
+
+**Aim** 
     * To enable practitioners to comprehend and describe the basic architecture of SLURM and the suite of tools
     * To use relevant tools to run and monitor (parallel) applications
 
-  * **Outcomes**
+**Outcomes**
     * run interactive jobs with //salloc//, a batch job with //sbatch//
     * explain the architecture of SLURM, i.e., the role of slurmd, srun and the injection of environment variables
     * explain the function of the tools: sacct, sbatch, salloc, srun, scancel, squeue, sinfo
