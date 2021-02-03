@@ -1,3 +1,20 @@
+1595186696	78.105.151.44	E	skill-tree:use:1:4:3:b	lucy			4
+1595186728	78.105.151.44	E	skill-tree:use:1:4:3:i	lucy			7
+1595186875	78.105.151.44	E	skill-tree:use:1:5:b	lucy			54
+1595186903	78.105.151.44	E	skill-tree:sd:1:2:5:1:1:3:1:b	lucy			7
+1595187165	78.105.151.44	E	skill-tree:use:2:b	lucy			-2
+1595187194	78.105.151.44	E	skill-tree:use:2:b	lucy			27
+1595187293	78.105.151.44	E	skill-tree:use:2:i	lucy			-8
+1595187353	78.105.151.44	E	skill-tree:use:3:b	lucy			23
+1595187391	78.105.151.44	E	skill-tree:use:3:i	lucy			-5
+1595187416	78.105.151.44	E	skill-tree:use:4:b	lucy			-1
+1595187432	78.105.151.44	E	skill-tree:use:6:b	lucy			-2
+1595192311	78.105.151.44	E	skill-tree:pe:2:3:b	lucy			-12
+1595192484	78.105.151.44	E	skill-tree:sd:1:2:2:e	lucy			-12
+1595192502	78.105.151.44	E	skill-tree:sd:1:2:2:i	lucy			-16
+1595259010	127.0.0.1	E	skill-tree:k:1:3:2:4:1:b		external edit		1
+1595409881	80.3.46.148	E	skill-tree:adm:b	julian-user	[Outcomes] 		-2
+1595437998	78.105.151.44	E	skill-tree:pe:2:3:b	lucy			3
 1595440154	78.105.151.44	E	skill-tree:k:1:3:2:4:1:b	lucy			0
 1595440275	78.105.151.44	E	skill-tree:k:1:3:2:4:1:b	lucy			0
 1597161801	78.105.151.44	E	skill-tree:sd:1:2:5:1:1:b	lucy			1
@@ -6,15 +23,3 @@
 1597401749	80.3.46.148	E	b	kunkel	[High-level skill] 		1
 1597402178	80.3.46.148	E	b	kunkel			-48
 1597402380	80.3.46.148	E	b	kunkel	[High-level skill] 		1
-1602177138	80.3.46.148	E	skill-tree:use:1:1:b	kunkel	[Background] 		-57
-1602177217	80.3.46.148	E	skill-tree:use:1:1:b	kunkel	[Aim] 		27
-1602834588	80.3.46.148	E	skill-tree:k:1:3:2:4:1:b	kunkel	[Outcomes] 		-1
-1602834593	80.3.46.148	E	skill-tree:k:1:3:2:4:1:b	kunkel	[Aim] 		-1
-1602834603	80.3.46.148	E	skill-tree:sd:1:2:5:1:1:b	kunkel	[Aim] 		-2
-1602834619	80.3.46.148	E	skill-tree:sd:1:2:5:1:1:b	kunkel			0
-1606232447	86.29.132.147	E	b	kunkel	[High-level skill] 		0
-1606232546	86.29.132.147	E	b	kunkel			-14
-1606232571	86.29.132.147	E	b	kunkel	[Generic Sub-skill] 		9
-1606232588	86.29.132.147	E	b	kunkel	[Sub-Skill for a specific software solutions] 		-4
-1608291561	86.29.132.147	E	b	kunkel	[Wiki] 		-4
-1610452360	86.29.132.147	E	skill-tree:use:1:1:b	kunkel	[Outcomes] 		35
