@@ -31,8 +31,8 @@ A skill is defined by the following fields:
     They are not intended to be statements of what students
     will learn or do, but rather over-arching intentions of the
     course. At a basic level, aims are trying to answer two
-    questions: What is the purpose of this programme or module? What is the programme or module trying to achieve?* [[https://academicdevelopment.qmul.ac.uk//wp-content/uploads/2014/05/Aims-and-Outcomes-Guide.pdf|reference]]
-  * **Learning outcomes** \\ Defines briefly **what** what practitioners know / will learn. Good literature describing the objectives is   [[https://academicdevelopment.qmul.ac.uk//wp-content/uploads/2014/05/Aims-and-Outcomes-Guide.pdf|here]]. The objected are statements what prospect learners are able to do, they should
+    questions: What is the purpose of this programme or module? What is the programme or module trying to achieve?* [[https://www.qmul.ac.uk/queenmaryacademy/media/qm-academy/Good-Practice-Guide-on-Writing-Aims-and-Learning-Outcomes-2020.pdf|reference]]
+  * **Learning outcomes** \\ Defines briefly **what** what practitioners know / will learn. Good literature describing the objectives is   [[https://www.qmul.ac.uk/queenmaryacademy/media/qm-academy/Good-Practice-Guide-on-Writing-Aims-and-Learning-Outcomes-2020.pdf|here]]. The objected are statements what prospect learners are able to do, they should
     * describe or define an action
     * be clearly stated
     * be measurable/quantifiable to some extent, for example, by using the action words 
