@@ -8,7 +8,7 @@ if (!defined('DOKU_INC')) die();
 ?>
 
 <!-- ********** HEADER ********** -->
-<div id="dokuwiki__header"><div class="pad group">
+<header id="dokuwiki__header"><div class="pad group">
 
     <?php tpl_includeFile('header.html') ?>
 
@@ -25,7 +25,7 @@ if (!defined('DOKU_INC')) die();
             // display logo and wiki title in a link to the home page
             tpl_link(
                 wl(),
-                '<img src="'.$logo.'" '.$logoSize[3].' alt="'.$conf['title'].'" />',
+                '<img src="'.$logo.'" alt="'.$conf['title'].'" />',
                 'accesskey="h" title="[H]"'
             );
         ?></h1>
@@ -81,4 +81,4 @@ if (!defined('DOKU_INC')) die();
 
 
     <hr class="a11y" />
-</div></div><!-- /header -->
+</div></header>

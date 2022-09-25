@@ -22,7 +22,7 @@ class Doku_Handler {
     public $calls = array();
 
     /** @var array internal status holders for some modes */
-    public $status = array(
+    protected $status = array(
         'section' => false,
         'doublequote' => 0,
     );

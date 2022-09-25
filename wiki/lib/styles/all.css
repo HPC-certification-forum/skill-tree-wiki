@@ -3,76 +3,6 @@
  * regardless of the used template. Templates can override them of course
  */
 
-div.skill-list div{
-  margin-left: 2em;
-}
-
-div.skill-ok a:link{
-  color: green;
-}
-
-div.skill-ok a:visited{
-  color: green;
-}
-
-div.skill-err a:link{
-  color: red;
-}
-
-div.skill-err a:visited{
-  color: red;
-}
-
-.hint{
-  text-decoration: underline;
-}
-
-.hint:hover {
-  color: #6610f2;
-}
-
-/*
-a[title]:hover:after {
-  content: attr(title);
-  padding: 4px 8px;
-  color: #333;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  white-space: nowrap;
-  z-index: 20px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -moz-box-shadow: 0px 0px 4px #222;
-  -webkit-box-shadow: 0px 0px 4px #222;
-  box-shadow: 0px 0px 4px #222;
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eeeeee),color-stop(1, #cccccc));
-  background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-  background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
-}
-*/
-
-div.skilllist{
-  float:left;
-  margin-right:10px;
-}
-
-span#marked{
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: large;
-}
-
-span.star{
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: orange;
-}
-
-/*span.star::before{ */
-
 div.clearer {
     clear: both;
     font-size: 0;
@@ -135,4 +65,13 @@ em.u {
 }
 em em.u {
     font-style: italic;
+}
+
+img.icon.smiley {
+    height: 1.2em;
+}
+
+svg {
+    width: auto;
+    height: 1.2em;
 }
