@@ -1,110 +1,177 @@
 ====== Wiki ======
 
-The main purpose of this wiki is to enable comfortable editing of the skill definitions from the [[https://github.com/HPC-certification-forum/skill-tree|git repository]] and for the available certificates.
-One skill or certificate is exactly one page.
+The primary purpose of this wiki is to enable comfortable editing of the skill definitions from the git repository and for the available certificates. One skill or certificate is exactly one page.
 
-To navigate the skills effectively, use the [[https://www.hpc-certification.org/cs/map/|JavaScript Map]]
+To navigate the skills effectively, use the Freeplane-based mindmap. Freeplane version 1.11 or higher is required.
 
-===== Editing the skill tree  =====
+===== Editing the skill tree =====
 
-We welcome improvements to the skill definitions (we lack at the moment some description below) and suggestions for skill tree changes.
-The skill tree has several representations, a Markdown version forms the foundation; then we have a JavaScript representation for better navigation ability.
+We welcome improvements to the skill definitions and suggestions for skill tree changes.
+The skill tree has several representations, the Freeplane mindmap version forms the base with its navigational features and ability to link directly to the markdown files.
 The markdown version is available in this [[https://www.hpc-certification.org/wiki/|wiki]].
-You may use it to make minor modifications to the descriptions (just register).
-More complex changes and modifications of the tree itself should be done by creating a GitHub pull request to either [[https://github.com/HPC-certification-forum/skill-tree|Markdown]] or [[https://github.com/HPC-certification-forum/curriculum|XML]] representation.
-
-Note that the chairs for the subtree may comment or discuss the proposal.
-
+Users may use it to modify the descriptions once registered. All skill tree changes and modifications should be executed by creating a GitHub pull request to either Markdown or XML representation.
+Note that the chairs for the subtree may comment on or discuss the proposal.
+The Skill Tree and the related Markdown file must have the same name and coordinates.
 
 ===== Skill definition =====
 
-A skill is located in a unique place in the skill tree, which is the URI.
-There may be multiple references to a skill in the tree (which is then like a graph).
+A skill is located in a unique place in the skill tree, which is the URI (Uniform Resource Identifier).
+There may be multiple references to a skill in the tree which are hyperlinked within the structure of the skill tree or linked and mentioned in the markdown file in the wiki. 
+On the skill tree, there are two types of entries: a: Skill and b: Overview. Both are defined, and the compulsory sections are below. 
 
-A skill is defined by the following fields:
-  * **ID** \\ This is a unique identifier from the root of the tree to the skill. \\ The last character of the skill encodes the skill level (**B**)asic, (**I**)ntermediate, (**E**)xpert. Skills with a higher level expand upon the competences from a lower level, therefore, an expert skill includes the qualification of intermediate and basic.
-  * **Name** \\ A speaking name for a skill.
-  * **Background** \\ Provides brief information motivating the need for the skill and how this skill fits into the skill map; what is the bigger picture.
-  * **Aim** \\ *Programme or module aims serve as broad purposes or
-    goals and are generally a statement of the intentions of the
-    teacher or school when designing or running the course.
-    They are not intended to be statements of what students
-    will learn or do, but rather over-arching intentions of the
-    course. At a basic level, aims are trying to answer two
-    questions: What is the purpose of this programme or module? What is the programme or module trying to achieve?* [[https://www.qmul.ac.uk/queenmaryacademy/media/qm-academy/Good-Practice-Guide-on-Writing-Aims-and-Learning-Outcomes-2020.pdf|reference]]
-  * **Learning outcomes** \\ Defines briefly **what** what practitioners know / will learn. Good literature describing the objectives is   [[https://www.qmul.ac.uk/queenmaryacademy/media/qm-academy/Good-Practice-Guide-on-Writing-Aims-and-Learning-Outcomes-2020.pdf|here]]. The objected are statements what prospect learners are able to do, they should
-    * describe or define an action
-    * be clearly stated
-    * be measurable/quantifiable to some extent, for example, by using the action words 
-  * **Subskills** \\ skills in the tree that refine the generic aims and learning outcomes. Note that for the ease of navigation ability, they may stem from another (top-level) branch.
+---
 
-==== Action words ====
+===== Skills section =====
 
-## Example skill
+**The following is the format:**
 
-This skill is made up for demonstration purposes. 
-Firstly, we have a high-level skill.
+# Header (The name of the leaf along with its coordinates)
 
-### High-level skill
+Example: Modules and Spack (USE2.5.2)
 
-  * **ID**: USE4.2-B \\
-  * **Name**: Executing parallel applications \\
-  * **Background**: Parallel computers are operated differently than a normal PC, all users must share the system. Therefore, various operative procedures are in place. Users must understand these concepts and procedures to be able to use the available resources of a system to run a parallel application. Moreover, individual solutions can often be found in a specific system. 
+## Name
 
-**Aim**: (To enable practitioners to) 
-  * To comprehend the concepts and procedures for running parallel applications in HPC environments
-  * To use the system to run and monitor the execution of parallel applications on the HPC system
-**Outcomes**: (the practitioner is able to):
-  * explain the concepts and procedures for resource allocation and job execution in an HPC environment
-  * run interactive jobs and batch jobs
-  * comprehend and describe the expected behavior of job scripts 
-  * change provided job scripts and embed them into shell scripts to run a variety of parallel applications
-  * analyze the output generated from a job scheduler and describe the cause of typically generated errors
+The name refers to a simplified name for the skill.
+Names must be short and to the point.
+Avoid names that are vague and unrelated.
+Also, do not use entire sentences as names.
+Do not use syntaxes as names, either, even if they are shorter than a descriptive name.
+The same name must be used in the skill tree and in the markdown file. 
 
+## Coordinates
 
+Coordinates are a unique identifier from the root of the skill tree. The coordinates indicate the position of the skill on the skill tree and are unique for every skill. Skills with the same name on different parts of the tree may exist, and each will have its own unique Coordinate. The exact coordinates must be used in the skill tree and the subsequent markdown file. 
 
-### Generic Sub-skill 
+Breakdown of an ID example: USE2.5.2
+USE2.5.2 -> [USE] = Main branch, [2.5.2] =  Branch co-ordinates. 
+See image: 
 
-Now, let's see a generic sub-skill, this extends the previous definition of being a sub-skill. Hence, it is intended that the objectives and outcomes from the parent skill above are covered and refined into specifics.
+{{wiki:skilltreeexplainer.png}}
 
-  * **ID**: USE4.2.1-B \\
-  * **Name**: Workload manager introduction \\
-  * **Background** \\ There is a wide range of different workload managers in use. This skill covers generic and widely used concepts.
+## Description
 
-**Aim** 
-    * To enable practitioners to comprehend and describe the basic architecture and concepts of resource allocation for an HPC system
+The description for a leaf node can be short or long depending on the section, but it does not need to be comprehensive.
 
-**Outcomes**
-    * comprehend the exclusive and shared usage model in HPC
-    * differentiate batch and interactive job submission
-    * comprehend the generic concepts and architecture of resource manager, scheduler, job and job script
-    * explain environment variables as a means to communicate
-    * comprehend accounting principles
-    * explain the generic steps to run and monitor a single job
+## Requirements
 
-### Sub-Skill for specific software solutions
+This section must have a list of requirements needed to learn the contents of a leaf. Requirements are split further into external and internal requirements. Any requirements present on the skill tree are internal. Any skill that needs to be learnt externally before learning the particular skill is an external requirement. A leaf node need not have either of these sections filled if there are no requirements to learn the skill. Local requirements must be hyperlinked within the Skill Tree and the Wiki.
 
-Now, let's see a specific sub-skill for a specific software, this also extends the previous definition being a sub-skill but is on the same level as the basic skill above. Hence, multiple similar software solutions can build on the knowledge disseminated in USE4.2.1-B.
+## Learning Objectives
+
+Learning objectives are essentially a list of everything the user needs to learn to acquire a certification for the particular leaf node. It is a comprehensive list of everything they need to know. The learning objectives also form the base of the testing phase of HPC CF, where candidates will be tested online for their knowledge of the topics covered under the learning objectives.
+
+## Get tested
+
+This section appears when an online test for a particular leaf is available. It links the user directly to an online test. 
 
 
-  * **ID**: USE4.2.2-B \\
-  * **Name**: SLURM Workload manager\\
-  * **Background** \\ SLURM is a widely used open-source workload manager providing various advanced features.
+**Sections which are blank need not be represented in the Markdown. However, some sections like Header, Description and Learning Objectives are compulsory in the leaf nodes markdown file.**
 
-**Aim** 
-    * To enable practitioners to comprehend and describe the basic architecture of SLURM and the suite of tools
-    * To use relevant tools to run and monitor (parallel) applications
+---
 
-**Outcomes**
-    * run interactive jobs with //salloc//, a batch job with //sbatch//
-    * explain the architecture of SLURM, i.e., the role of slurmd, srun and the injection of environment variables
-    * explain the function of the tools: sacct, sbatch, salloc, srun, scancel, squeue, sinfo
-    * explain time limits and the benefit of a backfill scheduler
-    * comprehend that environment variables are set when running a job
-    * comprehend and describe the expected behavior of a simple job scripts
-    * comprehend how variables are prioritized when using command line and a script
-    * change a provided job template and embed them into shell scripts to run a variety of parallel applications
-    * analyze the output generated from submitting to the job scheduler and typically generated errors
+===== Skill Overview Section =====
 
+Example: Modules and Spack (USE2.5.2)
 
+# Header (The name of the overview section along with its coordinates)
 
+##Name
+
+The name for an Overview skill will always be the word 'Overview' followed by the branch head name. See Image.
+
+## Coordinates
+
+Coordinates are a unique identifier from the root of the skill tree. The coordinates indicate the position of the skill on the skill tree and are unique for every skill. Skills with the same name on different parts of the tree may exist, and each will have its own unique Coordinate. The exact coordinates must be used in the skill tree and the subsequent markdown file.
+An overview always ends with a one as part of their ID!
+
+Breakdown of an ID example: USE2.5.1
+USE2.5.1 -> [USE] = Main branch, [2.5.1] =  Branch overview co-ordinates. 
+See image: 
+
+{{wiki:skilltreeexplainer.png}}
+
+## Description
+
+This is the most crucial section of the Overview leaf. Unlike skill leaf nodes, where descriptions do not need to be comprehensive. Descriptions on the Overview nodes must cover every leaf present on its branch. Overview is meant to be an introductory topic, a way to cover a skill topic without going in depth. While the description explains all the leaves on the branch, it need not be an in-depth description. Instead, it should only cover the critical information that the user must know. The overview node, however, must have more of a structure to its description. The structure must represent the other skill leaves on the branch, complete with links and coordinates.
+
+## Requirements
+
+This section must have a list of requirements needed to understand the skill leaves on the branch. Requirements are split further into external and internal requirements. Any requirements present on the skill tree are internal. Any skill that needs to be learnt externally before learning the particular skill is an external requirement. An overview node need not have either of these sections filled if there are no requirements to learn the skill. Local requirements must be linked within the Skill Tree and the Wiki.
+All requirements listed in the overview are applied recursively to the skill topics and skills under it.
+
+## Skill topics and Skills:
+This section contains links to the skill topics and skills listed under this overview branch. In case of a skill topic, the relevant overview branch is linked.
+
+**There are no learning objectives or tests for an overview branch. The overview branch lets trainers pick and choose relevant topics within a branch to teach at any required level, so it does not need to complete the learning objectives strictly specified in the leaf sections.**
+
+**In Overview, only the Header and Description as well as the list of skill  topics and skills are required.**
+
+---
+
+===== Example entry of an overview =====
+
+# Overview: Command Line Interface (USE2.2.1)
+Most cluster operating systems do not have a GUI and are therefore accessed via a Command Line Interface (CLI).
+
+## Requirements
+
+## Description
+
+Using a CLI requires knowledge of the underlying system as well as the programs it can execute. It is essential to learn about the functionality of the bash or shell program. Important to know is how to start, stop, interrupt and kill programs and what programs are available. Especially programs, like file editors and the manual program are of great importance.
+Additionally, it is vital to understand the file structure of the base operating system. Some paths lead to programs, while others contain configuration files, documentation, libraries and user-definable code.
+Finally, knowing about regular expressions and wildcards is fundamental, it helps run programs without fully specifying a path. Wildcards, in particular, are helpful if a selection of files is needed to be read or autocompleted by the CLI. Regular expressions are also used to match a content list but are more general because they are used in text body searches.
+
+## Skill topics and Skills
+
+* 2: Bash (USE2.2.2)
+* 3: Unix file system (USE2.2.3)
+* 4: Regular Expressions and Wildcards (USE2.2.4)
+
+----
+
+===== Example entry of a skill =====
+
+# Bash (USE2.2.2)
+
+HPC systems are usually accessed via a Linux-based Command Line Interface (CLI or CMD) provided by a shell (Bash in this case).
+
+## Requirements
+
+## Description
+
+At its core, a shell is a convenient tool that can be used to execute commands on a Linux computer. The shell provides a textual interface allowing it to interact with the operating system and perform all possible operations, i.e., accessing and manipulating files and running programs. However, there are various misconceptions that new users typically face when handling a shell such as the Bash. Particularly, dealing with control characters and the format expected when executing programs with arguments can be error-prone.
+Part of this skill is the general principles of the interaction with a shell to execute and stop programs.
+
+## Learning Objectives
+
+* Utilise the bash shell to execute individual programs with arguments
+* Identify potential special characters that must be handled with care
+* Utilise escaping to ensure the correct handling of arguments
+* Utilise the available help of a program (--help argument and the man pages)
+* Analysing the meaning of the exit code or SIGNALS of a program
+* Interrupt or abort a program execution by sending SIGNALS:
+* Keyboard command: CTRL-C
+* Keyboard command: CTRL-Z
+* Using the kill -9 command
+* Run multiple programs after another depending on the exit code ;, &&, ||
+* Use the set of basic programs and their tasks:
+	* pwd
+	* whoami
+	* sleep
+	* kill
+	* echo
+	* clear
+	* date
+	* man
+	* vi, vim, emacs, nano
+	* exit
+* Use the shell history to search and execute previously executed commands
+* Learn about environment and variables
+* Print all currently set variables
+* Set and print variables
+* Learn how to close popular command line text editors with/or without saving changes:
+	* nano
+	* vi
+	* emacs
+
+**Get Tested**
