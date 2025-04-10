@@ -13,11 +13,36 @@ Users may use it to modify the descriptions once registered. All skill tree chan
 Note that the chairs for the subtree may comment on or discuss the proposal.
 The Skill Tree and the related Markdown file must have the same name and coordinates.
 
-===== Skill definition =====
+===== Skill variations =====
 
 A skill is located in a unique place in the skill tree, which is the URI (Uniform Resource Identifier).
 There may be multiple references to a skill in the tree which are hyperlinked within the structure of the skill tree or linked and mentioned in the markdown file in the wiki. 
 On the skill tree, there are two types of entries: a: Skill and b: Overview. Both are defined, and the compulsory sections are below. 
+
+===== Skill definition =====
+
+A skill is a single unit of learning that can be taught in 1 to 4 hours, which includes self study time.
+It clearly defined by its requirements and the learning outcomes, which are learning objectives written using Blooms Taxonomy.
+Each skill is clearly separated from other skills and closed so that can be taught and tested for without colliding with other skills.
+
+A skill also needs to be universal, meaning it can be learned and applied to site, center, or computer independent.
+For example, if a skill contain knowledge about principles these need to be phrased in a generalized manner or if a specific program is taught, this needs to be clearly stated in the name of the skill and the description.
+One example can be parallel programming principles, which can be taught without knowledge of specific paradigms such as OpenMP or MPI.
+These can be used as example during a course, but are not part of the skill.
+Similarly, workload managers can be explained without stating a specific one, but a manager such as SLURM can be a skill on its own.
+This is a great challenge and benefits from many contributors.
+Only by this can this framework really be considered a standard.
+
+===== Overview skill definition =====
+
+A skill overview or overview skill gets created each time a skill is split.
+This is required to keep consistency in the standard.
+Therefor, it also retains the coordinate of the old skill and is marked with 0 in the Mind Map.
+
+Every course that linked to the old skill automatically links to the overview skill.
+It does not have learning outcomes or learning objectives.
+However, it always has longer descriptions to cover all the skill that are under it.
+
 
 ---
 
@@ -56,9 +81,9 @@ The description for a leaf node can be short or long depending on the section, b
 
 This section must have a list of requirements needed to learn the contents of a leaf. Requirements are split further into external and internal requirements. Any requirements present on the skill tree are internal. Any skill that needs to be learnt externally before learning the particular skill is an external requirement. A leaf node need not have either of these sections filled if there are no requirements to learn the skill. Local requirements must be hyperlinked within the Skill Tree and the Wiki.
 
-## Learning Objectives
+## Learning Outcomes
 
-Learning objectives are essentially a list of everything the user needs to learn to acquire a certification for the particular leaf node. It is a comprehensive list of everything they need to know. The learning objectives also form the base of the testing phase of HPC CF, where candidates will be tested online for their knowledge of the topics covered under the learning objectives.
+Learning objectives, or learning outcomes as called here, are essentially a list of everything the user needs to learn to acquire a certification for the particular leaf node. It is a comprehensive list of everything they need to know. The learning objectives also form the base of the testing phase of HPC CF, where candidates will be tested online for their knowledge of the topics covered under the learning objectives.
 
 ## Get tested
 
@@ -110,7 +135,7 @@ This section contains links to the skill topics and skills listed under this ove
 
 ===== Example entry of an overview =====
 
-# Overview: Command Line Interface (USE2.2.1)
+# Overview: Command Line Interface (USE2.2)
 Most cluster operating systems do not have a GUI and are therefore accessed via a Command Line Interface (CLI).
 
 ## Requirements
@@ -123,15 +148,15 @@ Finally, knowing about regular expressions and wildcards is fundamental, it help
 
 ## Skill topics and Skills
 
-* 2: Bash (USE2.2.2)
-* 3: Unix file system (USE2.2.3)
-* 4: Regular Expressions and Wildcards (USE2.2.4)
+* 1: Bash (USE2.2.1)
+* 2: Unix file system (USE2.2.2)
+* 3: Regular Expressions and Wildcards (USE2.2.3)
 
 ----
 
 ===== Example entry of a skill =====
 
-# Bash (USE2.2.2)
+# Bash (USE2.2.1)
 
 HPC systems are usually accessed via a Linux-based Command Line Interface (CLI or CMD) provided by a shell (Bash in this case).
 
