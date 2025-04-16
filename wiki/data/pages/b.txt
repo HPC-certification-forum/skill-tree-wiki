@@ -13,11 +13,44 @@ Users may use it to modify the descriptions once registered. All skill tree chan
 Note that the chairs for the subtree may comment on or discuss the proposal.
 The Skill Tree and the related Markdown file must have the same name and coordinates.
 
-===== Skill definition =====
+===== Skill variations =====
 
 A skill is located in a unique place in the skill tree, which is the URI (Uniform Resource Identifier).
 There may be multiple references to a skill in the tree which are hyperlinked within the structure of the skill tree or linked and mentioned in the markdown file in the wiki. 
-On the skill tree, there are two types of entries: a: Skill and b: Overview. Both are defined, and the compulsory sections are below. 
+
+On the skill tree, there are two types of entries: a: Leaf Skill and b: Node Skill.
+Both are defined similarly but require care with the learning objectives. 
+
+===== Leaf Skill definition =====
+
+A (leaf) skill is a single unit of learning that can be taught in 1 to 4 hours, which includes self study time.
+It is clearly defined by its requirements and the learning outcomes, which are learning objectives written using Blooms Taxonomy.
+Each skill is clearly separated from other skills and closed so that can be taught and tested for without colliding with other skills.
+
+A skill also needs to be universal, meaning it can be learned and applied to site, center, or computer independent.
+For example, if a skill contain knowledge about principles these need to be phrased in a generalized manner or if a specific program is taught, this needs to be clearly stated in the name of the skill and the description.
+One example can be parallel programming principles, which can be taught without knowledge of specific paradigms such as OpenMP or MPI.
+These can be used as example during a course, but are not part of the skill.
+Similarly, workload managers can be explained without stating a specific one, but a manager such as SLURM can be a skill on its own.
+This is a great challenge and benefits from many contributors.
+Only by this can this framework really be considered a standard.
+
+===== Node Skill definition =====
+
+A (node) skill is a collection of leaves and other node skills.
+It contains all the learning outcomes from the skills immediately bellow it.
+The many learning outcomes of a skill are combined into one or maximum two learning outcomes for the node skill.
+This ensures that the content is accumulated up the tree.
+
+For example, a node skill with 5 leaf skill attached should have minimum 5 to 6 learning outcomes and 10 maximum.
+This also holds true of a node skill has a mix leaf skills and node skills.
+
+The idea is that the learning objectives of a leaf skill are precise and get more and more incremental.
+An example is a node skill called Cluster operating system (USE1) which has a leaf skill called Unix file system (USE1.1).
+The leaf skill contains many learning objectives, which cover specific programs such as pwd, kill, sleep and more as well as learning objectives covering signalling via CTRL-C and others.
+The node skill will have one learning objective covering handling of programs with arguments and how to manage signals to the program.
+
+
 
 ---
 
@@ -46,8 +79,6 @@ Breakdown of an ID example: USE2.5.2
 USE2.5.2 -> [USE] = Main branch, [2.5.2] =  Branch co-ordinates. 
 See image: 
 
-{{wiki:skilltreeexplainer.png}}
-
 ## Description
 
 The description for a leaf node can be short or long depending on the section, but it does not need to be comprehensive.
@@ -56,9 +87,14 @@ The description for a leaf node can be short or long depending on the section, b
 
 This section must have a list of requirements needed to learn the contents of a leaf. Requirements are split further into external and internal requirements. Any requirements present on the skill tree are internal. Any skill that needs to be learnt externally before learning the particular skill is an external requirement. A leaf node need not have either of these sections filled if there are no requirements to learn the skill. Local requirements must be hyperlinked within the Skill Tree and the Wiki.
 
-## Learning Objectives
+## Learning Outcomes
 
-Learning objectives are essentially a list of everything the user needs to learn to acquire a certification for the particular leaf node. It is a comprehensive list of everything they need to know. The learning objectives also form the base of the testing phase of HPC CF, where candidates will be tested online for their knowledge of the topics covered under the learning objectives.
+Learning objectives, or learning outcomes as called here, are essentially a list of everything the user needs to learn to acquire a certification for the particular leaf node. It is a comprehensive list of everything they need to know. The learning objectives also form the base of the testing phase of HPC CF, where candidates will be tested online for their knowledge of the topics covered under the learning objectives.
+
+## Subskills
+
+This section is only present for node skills and contains a linked list with all the skills immediately under it.
+
 
 ## Get tested
 
@@ -69,109 +105,54 @@ This section appears when an online test for a particular leaf is available. It 
 
 ---
 
-===== Skill Overview Section =====
-
-Example: Modules and Spack (USE2.5.2)
-
-# Header (The name of the overview section along with its coordinates)
-
-##Name
-
-The name for an Overview skill will always be the word 'Overview' followed by the branch head name. See Image.
-
-## Coordinates
-
-Coordinates are a unique identifier from the root of the skill tree. The coordinates indicate the position of the skill on the skill tree and are unique for every skill. Skills with the same name on different parts of the tree may exist, and each will have its own unique Coordinate. The exact coordinates must be used in the skill tree and the subsequent markdown file.
-An overview always ends with a one as part of their ID!
-
-Breakdown of an ID example: USE2.5.1
-USE2.5.1 -> [USE] = Main branch, [2.5.1] =  Branch overview co-ordinates. 
-See image: 
-
-{{wiki:skilltreeexplainer.png}}
-
-## Description
-
-This is the most crucial section of the Overview leaf. Unlike skill leaf nodes, where descriptions do not need to be comprehensive. Descriptions on the Overview nodes must cover every leaf present on its branch. Overview is meant to be an introductory topic, a way to cover a skill topic without going in depth. While the description explains all the leaves on the branch, it need not be an in-depth description. Instead, it should only cover the critical information that the user must know. The overview node, however, must have more of a structure to its description. The structure must represent the other skill leaves on the branch, complete with links and coordinates.
-
-## Requirements
-
-This section must have a list of requirements needed to understand the skill leaves on the branch. Requirements are split further into external and internal requirements. Any requirements present on the skill tree are internal. Any skill that needs to be learnt externally before learning the particular skill is an external requirement. An overview node need not have either of these sections filled if there are no requirements to learn the skill. Local requirements must be linked within the Skill Tree and the Wiki.
-All requirements listed in the overview are applied recursively to the skill topics and skills under it.
-
-## Skill topics and Skills:
-This section contains links to the skill topics and skills listed under this overview branch. In case of a skill topic, the relevant overview branch is linked.
-
-**There are no learning objectives or tests for an overview branch. The overview branch lets trainers pick and choose relevant topics within a branch to teach at any required level, so it does not need to complete the learning objectives strictly specified in the leaf sections.**
-
-**In Overview, only the Header and Description as well as the list of skill  topics and skills are required.**
-
----
-
-===== Example entry of an overview =====
-
-# Overview: Command Line Interface (USE2.2.1)
-Most cluster operating systems do not have a GUI and are therefore accessed via a Command Line Interface (CLI).
-
-## Requirements
-
-## Description
-
-Using a CLI requires knowledge of the underlying system as well as the programs it can execute. It is essential to learn about the functionality of the bash or shell program. Important to know is how to start, stop, interrupt and kill programs and what programs are available. Especially programs, like file editors and the manual program are of great importance.
-Additionally, it is vital to understand the file structure of the base operating system. Some paths lead to programs, while others contain configuration files, documentation, libraries and user-definable code.
-Finally, knowing about regular expressions and wildcards is fundamental, it helps run programs without fully specifying a path. Wildcards, in particular, are helpful if a selection of files is needed to be read or autocompleted by the CLI. Regular expressions are also used to match a content list but are more general because they are used in text body searches.
-
-## Skill topics and Skills
-
-* 2: Bash (USE2.2.2)
-* 3: Unix file system (USE2.2.3)
-* 4: Regular Expressions and Wildcards (USE2.2.4)
-
-----
-
 ===== Example entry of a skill =====
 
-# Bash (USE2.2.2)
+# USE1.1 Command Line Interface
 
-HPC systems are usually accessed via a Linux-based Command Line Interface (CLI or CMD) provided by a shell (Bash in this case).
+HPC systems are usually accessed via a Linux-based Command Line Interface (CLI) that is provided by a shell.
+
+At its core, a shell is simply a convenient tool that you can use to execute commands on a Linux computer.
+The shell provides a textual interface allowing to interact with the operating system and performing all possible operations, i.e., accessing and manipulating files, and running programs.   However, there are various misconceptions that new users typically face when handling a shell such as the Bash.
+Particularly, dealing with control characters and the format expected when executing programs with arguments can be error-prone.
+
+Part of this skill is the general principles of the interaction with a shell, to execute and to stop programs.
 
 ## Requirements
 
-## Description
 
-At its core, a shell is a convenient tool that can be used to execute commands on a Linux computer. The shell provides a textual interface allowing it to interact with the operating system and perform all possible operations, i.e., accessing and manipulating files and running programs. However, there are various misconceptions that new users typically face when handling a shell such as the Bash. Particularly, dealing with control characters and the format expected when executing programs with arguments can be error-prone.
-Part of this skill is the general principles of the interaction with a shell to execute and stop programs.
+## Learning Outcomes
 
-## Learning Objectives
+  * Utilize the bash shell to execute individual programs with arguments.
+  * Describe the meaning of the exit code of a program.
+  * Run multiple programs after another depending on the exit code ;, &&, ||.
+  * List the set of basic programs and their tasks:
+    * pwd
+    * whoami
+    * sleep
+    * kill
+    * echo
+    * clear
+    * man 
+    * vi, vim, emacs, nano
+    * exit
+  * Utilize the available help of a program (--help argument and the man pages).
+  * Interrupt or abort a program execution:
+    * CTRL-C
+    * CTRL-Z
+    * using kill -9
+  * Use the shell history to search and execute previously executed commands.
+  * Set and print shell variables.
+  * Print all currently set variables
+  * Identify potential special characters that must be handled with care.
+    * List strings that could refer to files/directories
+  * Utilize escaping to ensure correct handling of arguments.
+  * Understand wildcard characters to select a group of files/directories:
+    * * 
+    * ? 
+    * [-,]
+  * How to close popular command line text editors with/or without saving changes:
+    * nano
+    * vi
+    * emacs
 
-* Utilise the bash shell to execute individual programs with arguments
-* Identify potential special characters that must be handled with care
-* Utilise escaping to ensure the correct handling of arguments
-* Utilise the available help of a program (--help argument and the man pages)
-* Analysing the meaning of the exit code or SIGNALS of a program
-* Interrupt or abort a program execution by sending SIGNALS:
-* Keyboard command: CTRL-C
-* Keyboard command: CTRL-Z
-* Using the kill -9 command
-* Run multiple programs after another depending on the exit code ;, &&, ||
-* Use the set of basic programs and their tasks:
-	* pwd
-	* whoami
-	* sleep
-	* kill
-	* echo
-	* clear
-	* date
-	* man
-	* vi, vim, emacs, nano
-	* exit
-* Use the shell history to search and execute previously executed commands
-* Learn about environment and variables
-* Print all currently set variables
-* Set and print variables
-* Learn how to close popular command line text editors with/or without saving changes:
-	* nano
-	* vi
-	* emacs
 
-**Get Tested**
